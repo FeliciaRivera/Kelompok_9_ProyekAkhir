@@ -1,0 +1,369 @@
+<!--
+  ============================================================
+  Proyek Akhir Pemrograman Antarmuka Pengguna
+  Website Profil & Katalog UMKM — Warung Pojok Mba Sofy
+
+  Mata Kuliah : Pemrograman Antarmuka Pengguna (SI23025)
+  Kelompok    : 9 (SI A)
+
+  Disusun oleh:
+  - Deio Castello Sujati       (825250002)
+  - Felicia Rivera             (825250003)
+  - Muhammad Ubait Dhaifullah  (825250012)
+  ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warung Pojok Mba Sofy — Menu &amp; Pemesanan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER (konsisten) ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <div class="brand">
+        <img src="image/logo.png" alt="Logo Warung Pojok Mba Sofy" class="brand-logo">
+        <div class="brand-text">
+          <h1>Warung Pojok Mba Sofy</h1>
+          <p class="tagline">Menu &amp; Pemesanan</p>
+        </div>
+      </div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Beranda</a></li>
+
+          <li class="dropdown">
+            <a href="menu.html" class="dropdown-toggle active">Menu &#9662;</a>
+            <ul class="dropdown-menu">
+              <li><a href="menu.html#makanan">Makanan</a></li>
+              <li><a href="menu.html#minuman">Minuman</a></li>
+              <li><a href="menu.html#roti">Roti Bakar</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="#form-pemesanan">Pemesanan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= KONTEN UTAMA ================= -->
+  <main class="container">
+
+    <h2 class="page-title">Katalog Menu &amp; Daftar Harga</h2>
+    <p class="form-note">Semua harga dalam Rupiah. Menu bisa dipesan langsung di tempat atau via online.</p>
+
+    <!-- ================= TABEL MAKANAN (colspan & rowspan) ================= -->
+    <section id="makanan">
+      <h3 class="section-heading">Makanan</h3>
+      <div class="table-wrapper">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th colspan="3">Katalog Menu Warung Pojok Mba Sofy</th>
+            </tr>
+            <tr>
+              <th>Kategori</th>
+              <th>Nama Menu</th>
+              <th>Harga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- NASI GORENG (rowspan=4) -->
+            <tr>
+              <td rowspan="4" class="kategori">Nasi Goreng</td>
+              <td>Nasi Goreng Biasa</td>
+              <td>Rp 20.000</td>
+            </tr>
+            <tr><td>Nasi Goreng Komplit</td><td>Rp 24.000</td></tr>
+            <tr><td>Nasi Goreng Komplit Special</td><td>Rp 29.000</td></tr>
+            <tr><td>Nasi Goreng Seafood</td><td>Rp 29.000</td></tr>
+
+            <!-- KWETIAU GORENG (rowspan=3) -->
+            <tr>
+              <td rowspan="3" class="kategori">Kwetiau Goreng</td>
+              <td>Kwetiau Goreng Biasa</td>
+              <td>Rp 20.000</td>
+            </tr>
+            <tr><td>Kwetiau Goreng Komplit</td><td>Rp 24.000</td></tr>
+            <tr><td>Kwetiau Goreng Komplit Special</td><td>Rp 29.000</td></tr>
+
+            <!-- MIE GORENG TEK TEK (rowspan=3) -->
+            <tr>
+              <td rowspan="3" class="kategori">Mie Goreng Tek Tek</td>
+              <td>Mie Goreng Tek Tek Biasa</td>
+              <td>Rp 20.000</td>
+            </tr>
+            <tr><td>Mie Goreng Tek Tek Komplit</td><td>Rp 24.000</td></tr>
+            <tr><td>Mie Goreng Tek Tek Komplit Special</td><td>Rp 29.000</td></tr>
+
+            <!-- NASI KATSU (rowspan=3) -->
+            <tr>
+              <td rowspan="3" class="kategori">Nasi Katsu</td>
+              <td>Nasi Katsu</td>
+              <td>Rp 20.000</td>
+            </tr>
+            <tr><td>Nasi Katsu Geprek</td><td>Rp 22.000</td></tr>
+            <tr><td>Nasi Katsu + Telor</td><td>Rp 24.000</td></tr>
+
+            <!-- KATSU MIX INDOMIE (rowspan=4) -->
+            <tr>
+              <td rowspan="4" class="kategori">Katsu Mix Indomie</td>
+              <td>Katsu Mix Indomie</td>
+              <td>Rp 23.000</td>
+            </tr>
+            <tr><td>Katsu Mix Indomie + Telor</td><td>Rp 27.000</td></tr>
+            <tr><td>Katsu Mix Indomie Double</td><td>Rp 28.000</td></tr>
+            <tr><td>Katsu Mix Indomie Double + Telor</td><td>Rp 32.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= TABEL ROTI BAKAR ================= -->
+    <section id="roti">
+      <h3 class="section-heading">Roti Bakar</h3>
+      <div class="table-wrapper">
+        <table class="price-table">
+          <thead>
+            <tr><th>Nama Menu</th><th>Harga</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Roti Bakar Aneka Rasa</td><td>Rp 13.000</td></tr>
+            <tr><td>Roti Bakar Mix Keju</td><td>Rp 15.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= TABEL MINUMAN ================= -->
+    <section id="minuman">
+      <h3 class="section-heading">Minuman</h3>
+      <div class="table-wrapper">
+        <table class="price-table">
+          <thead>
+            <tr><th>Kategori</th><th>Nama Menu</th><th>Harga</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="4" class="kategori">Minuman Dingin</td>
+              <td>Nutrisari</td>
+              <td>Rp 7.000</td>
+            </tr>
+            <tr><td>Ovaltine</td><td>Rp 10.000</td></tr>
+            <tr><td>Good Day</td><td>Rp 10.000</td></tr>
+            <tr><td>Aneka Pop Ice</td><td>Rp 10.000</td></tr>
+
+            <tr>
+              <td rowspan="2" class="kategori">Minuman Hangat</td>
+              <td>Aneka Kopi Panas</td>
+              <td>Rp 6.000</td>
+            </tr>
+            <tr><td>Ovaltine Hangat</td><td>Rp 6.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= GALERI GAMBAR ================= -->
+    <section id="galeri">
+      <h3 class="section-heading">Galeri Produk</h3>
+      <div class="gallery">
+        <figure>
+          <img src="image/nasi goreng.jpg.jpeg" alt="Nasi Goreng Spesial">
+          <figcaption>Nasi Goreng</figcaption>
+        </figure>
+        <figure>
+          <img src="image/kwetiau goreng.jpg.jpeg" alt="Kwetiau Goreng">
+          <figcaption>Kwetiau Goreng</figcaption>
+        </figure>
+        <figure>
+          <img src="image/nasi katsu.jpg.jpeg" alt="Nasi Katsu">
+          <figcaption>Nasi Katsu</figcaption>
+        </figure>
+        <figure>
+          <img src="image/roti bakar.jpg.jpeg" alt="Roti Bakar">
+          <figcaption>Roti Bakar</figcaption>
+        </figure>
+        <figure>
+          <img src="image/minuman dingin.jpg.jpeg" alt="Minuman Dingin">
+          <figcaption>Minuman Dingin</figcaption>
+        </figure>
+        <figure>
+          <img src="image/kopi panas.jpg.jpeg" alt="Kopi Panas">
+          <figcaption>Kopi Panas</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= FORM PEMESANAN + PANEL INFO ================= -->
+    <section id="form-pemesanan" class="form-section">
+      <h3 class="section-heading">Form Pemesanan</h3>
+      <p class="form-note">Isi form di bawah ini untuk memesan. Pesanan akan dikonfirmasi via WhatsApp.</p>
+
+      <div class="form-layout">
+
+        <!-- FORM -->
+        <form action="#" method="post" class="order-form">
+
+          <div class="form-group">
+            <label for="nama">Nama Lengkap *</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telepon">No. Telepon *</label>
+            <input type="tel" id="telepon" name="telepon" placeholder="0812xxxxxxx"
+                   pattern="[0-9]{10,13}" required>
+          </div>
+
+          <div class="form-group">
+            <label for="jumlah">Jumlah Porsi *</label>
+            <input type="number" id="jumlah" name="jumlah" min="1" max="50" value="1" required>
+          </div>
+
+          <div class="form-group">
+            <label>Metode Pemesanan *</label>
+            <div class="radio-row">
+              <label><input type="radio" name="metode" value="dine-in" checked> Makan di Tempat</label>
+              <label><input type="radio" name="metode" value="takeaway"> Take Away</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="menu-pilihan">Pilih Menu *</label>
+            <select id="menu-pilihan" name="menu" required>
+              <option value="">-- Pilih Menu --</option>
+
+              <optgroup label="Nasi Goreng">
+                <option value="nasi-goreng-biasa">Nasi Goreng Biasa — Rp 20.000</option>
+                <option value="nasi-goreng-komplit">Nasi Goreng Komplit — Rp 24.000</option>
+                <option value="nasi-goreng-komplit-special">Nasi Goreng Komplit Special — Rp 29.000</option>
+                <option value="nasi-goreng-seafood">Nasi Goreng Seafood — Rp 29.000</option>
+              </optgroup>
+
+              <optgroup label="Kwetiau Goreng">
+                <option value="kwetiau-biasa">Kwetiau Goreng Biasa — Rp 20.000</option>
+                <option value="kwetiau-komplit">Kwetiau Goreng Komplit — Rp 24.000</option>
+                <option value="kwetiau-komplit-special">Kwetiau Goreng Komplit Special — Rp 29.000</option>
+              </optgroup>
+
+              <optgroup label="Mie Goreng Tek Tek">
+                <option value="mie-biasa">Mie Goreng Tek Tek Biasa — Rp 20.000</option>
+                <option value="mie-komplit">Mie Goreng Tek Tek Komplit — Rp 24.000</option>
+                <option value="mie-komplit-special">Mie Goreng Tek Tek Komplit Special — Rp 29.000</option>
+              </optgroup>
+
+              <optgroup label="Nasi Katsu">
+                <option value="nasi-katsu">Nasi Katsu — Rp 20.000</option>
+                <option value="nasi-katsu-geprek">Nasi Katsu Geprek — Rp 22.000</option>
+                <option value="nasi-katsu-telor">Nasi Katsu + Telor — Rp 24.000</option>
+              </optgroup>
+
+              <optgroup label="Katsu Mix Indomie">
+                <option value="katsu-indomie">Katsu Mix Indomie — Rp 23.000</option>
+                <option value="katsu-indomie-telor">Katsu Mix Indomie + Telor — Rp 27.000</option>
+                <option value="katsu-indomie-double">Katsu Mix Indomie Double — Rp 28.000</option>
+                <option value="katsu-indomie-double-telor">Katsu Mix Indomie Double + Telor — Rp 32.000</option>
+              </optgroup>
+
+              <optgroup label="Roti Bakar">
+                <option value="roti-rasa">Roti Bakar Aneka Rasa — Rp 13.000</option>
+                <option value="roti-keju">Roti Bakar Mix Keju — Rp 15.000</option>
+              </optgroup>
+
+              <optgroup label="Minuman Dingin">
+                <option value="nutrisari">Nutrisari — Rp 7.000</option>
+                <option value="ovaltine">Ovaltine — Rp 10.000</option>
+                <option value="good-day">Good Day — Rp 10.000</option>
+                <option value="pop-ice">Aneka Pop Ice — Rp 10.000</option>
+              </optgroup>
+
+              <optgroup label="Minuman Hangat">
+                <option value="kopi">Aneka Kopi Panas — Rp 6.000</option>
+                <option value="ovaltine-hangat">Ovaltine Hangat — Rp 6.000</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="catatan">Catatan Tambahan</label>
+            <textarea id="catatan" name="catatan" rows="4"
+                      placeholder="Contoh: jangan pedas, tanpa bawang, dll."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Kirim Pesanan</button>
+        </form>
+
+        <!-- PANEL INFO PENDUKUNG -->
+        <aside class="form-info">
+          <h4>Butuh Bantuan?</h4>
+          <p>Hubungi kami jika ada pertanyaan sebelum memesan:</p>
+
+          <div class="info-box">
+            <p class="info-label">Telepon </p>
+            <p class="info-text">0813-8376-3005</p>
+          </div>
+
+          <div class="info-box">
+            <p class="info-label">Email</p>
+            <p class="info-text">warung.mbasofy@gmail.com</p>
+          </div>
+
+          <div class="info-box">
+            <p class="info-label">Jam Buka</p>
+            <p class="info-text">Senin – Jumat<br>07.00 – 17.00 WIB</p>
+          </div>
+
+          <div class="info-box">
+            <p class="info-label">Estimasi Waktu</p>
+            <p class="info-text">
+              Dine-in: 10–15 menit<br>
+              Take away: 15–20 menit
+            </p>
+          </div>
+
+          <div class="info-box">
+            <p class="info-label">Metode Pembayaran</p>
+            <p class="info-text">
+              Tunai · Transfer Bank<br>
+              QRIS · GoPay · OVO · Dana
+            </p>
+          </div>
+
+          <div class="info-box">
+            <p class="info-label">Tips Pemesanan</p>
+            <p class="info-text">Jika ingin memesan untuk nanti, pesan minimal 30 menit sebelum jam pengambilan makanan.</p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Warung Pojok Mba Sofy — Kelompok 9 (SI A). Proyek Akhir Pemrograman Antarmuka Pengguna.</p>
+  </footer>
+
+</body>
+</html>

@@ -423,6 +423,247 @@ a:hover { text-decoration: underline; }
 }
 
 /* =============================================================
+   10. TABEL (colspan & rowspan) + WRAPPER RESPONSIF
+   ============================================================= */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0 24px;
+  border-radius: 8px;
+}
+
+.table-wrapper .price-table,
+.table-wrapper .info-table {
+  margin: 0;
+  min-width: 480px;   /* tabel minimal 480px, sisanya scroll */
+}
+
+.price-table,
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 14px;
+  background: var(--frame-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.price-table th,
+.price-table td,
+.info-table th,
+.info-table td {
+  border: 1px solid var(--touch-of-glamour);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.price-table thead tr:first-child th {
+  background: var(--dark-orange);
+  color: var(--text-light);
+  text-align: center;
+}
+
+.price-table thead tr:nth-child(2) th,
+.info-table thead th {
+  background: var(--maine-coon);
+  color: var(--text-light);
+}
+
+.price-table td.kategori {
+  font-weight: bold;
+  color: var(--maine-coon);
+  background: var(--shallot-peel);
+  vertical-align: middle;
+}
+
+.price-table tbody tr:nth-child(even),
+.info-table tbody tr:nth-child(even) { background: #fff3e2; }
+
+.price-table tbody tr:hover,
+.info-table tbody tr:hover { background: var(--jambalaya); }
+
+/* =============================================================
+   11. GALERI GAMBAR
+   ============================================================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.gallery figure {
+  background: var(--frame-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(58, 34, 16, 0.1);
+  transition: transform 0.2s ease;
+  margin: 0;
+}
+
+.gallery figure:hover { transform: translateY(-4px); }
+
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.gallery figcaption {
+  padding: 10px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--maine-coon);
+  background: var(--card-tint);
+}
+
+/* =============================================================
+   12. FORM PEMESANAN + PANEL INFO
+   ============================================================= */
+.form-section {
+  background: var(--frame-bg);
+  border-radius: 10px;
+  padding: 28px;
+  margin-top: 32px;
+  box-shadow: 0 2px 8px rgba(58, 34, 16, 0.08);
+}
+
+.form-note {
+  font-size: 13px;
+  color: var(--maine-coon);
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.form-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.form-group { margin-bottom: 18px; }
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--maine-coon);
+  margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--touch-of-glamour);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--frame-bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--dark-orange);
+  box-shadow: 0 0 0 3px rgba(198, 86, 5, 0.15);
+}
+
+.form-group textarea { resize: vertical; min-height: 80px; }
+
+.radio-row,
+.checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.radio-row label,
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btn-submit {
+  background: var(--dark-orange);
+  color: var(--text-light);
+  border: none;
+  padding: 13px 32px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-submit:hover {
+  background: var(--maine-coon);
+  transform: translateY(-2px);
+}
+
+/* ---------- Panel Info ---------- */
+.form-info {
+  background: var(--card-tint);
+  border: 1px solid var(--jambalaya);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.form-info h4 {
+  color: var(--dark-orange);
+  margin: 0 0 8px;
+  font-size: 16px;
+  border-bottom: 2px solid var(--jambalaya);
+  padding-bottom: 8px;
+}
+
+.form-info > p {
+  font-size: 13px;
+  margin: 0 0 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.form-info .info-box {
+  background: var(--frame-bg);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.form-info .info-box:last-child { margin-bottom: 0; }
+
+.form-info .info-label {
+  margin: 0 0 4px;
+  font-weight: bold;
+  color: var(--maine-coon);
+  font-size: 13px;
+}
+
+.form-info .info-text {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =============================================================
    13. FOOTER
    ============================================================= */
 .site-footer {
