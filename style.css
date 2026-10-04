@@ -1,0 +1,548 @@
+/* =============================================================
+   Proyek Akhir Pemrograman Antarmuka Pengguna
+   Website Profil & Katalog UMKM — Warung Pojok Mba Sofy
+
+   Mata Kuliah : Pemrograman Antarmuka Pengguna (SI23025)
+   Kelompok    : 9 (SI A)
+
+   Disusun oleh:
+   - Deio Castello Sujati       (825250002)
+   - Felicia Rivera             (825250003)
+   - Muhammad Ubait Dhaifullah  (825250012)
+   ============================================================= */
+
+/* ---------- 1. VARIABEL WARNA (Konsistensi Visual) ---------- */
+:root {
+  --jambalaya:         #f2b475;
+  --shallot-peel:      #f4c47a;
+  --touch-of-glamour:  #df8e48;
+  --dark-orange:       #c65605;
+  --maine-coon:        #ca762b;
+
+  --canvas:      #f5e9d6;
+  --frame-bg:    #fffaf3;
+  --text:        #3a2210;
+  --text-light:  #fff8f0;
+  --card-tint:   #fdf2e2;
+  --line-soft:   #e3c9a3;
+}
+
+/* ---------- 2. RESET & DASAR ---------- */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+img, video, iframe { max-width: 100%; display: block; }
+
+a { color: var(--dark-orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* =============================================================
+   3. HEADER & NAVIGASI
+   ============================================================= */
+.site-header {
+  background: var(--dark-orange);
+  color: var(--text-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(58, 34, 16, 0.15);
+}
+
+.header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* ---------- BRAND / LOGO ---------- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--text-light);
+  padding: 3px;
+  border: 2px solid var(--frame-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.brand-text h1 {
+  font-size: 20px;
+  margin: 0 0 4px;
+  letter-spacing: 0.3px;
+}
+
+.brand-text .tagline {
+  font-size: 12px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ---------- HAMBURGER MENU (CSS-only) ---------- */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  margin-left: auto;
+}
+
+.nav-toggle-label:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.nav-toggle-label span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--text-light);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.2s;
+}
+
+/* ---------- NAVIGASI UTAMA ---------- */
+.main-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav .nav-list > li > a {
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background 0.2s ease;
+}
+
+.main-nav .nav-list > li > a:hover,
+.main-nav .nav-list > li > a.active {
+  background: var(--maine-coon);
+  text-decoration: none;
+}
+
+/* =============================================================
+   4. DROPDOWN MENU (CSS-only, tanpa JS)
+   — Pakai padding-top biar tidak ada celah mati (anti-kedip)
+   — Animasi smooth pakai opacity + visibility + transform
+   ============================================================= */
+.dropdown { position: relative; }
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  /* default: tersembunyi tapi tetap "ada" (bukan display: none)
+     supaya transition bekerja */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  pointer-events: none;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: var(--frame-bg);
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(58, 34, 16, 0.18);
+  list-style: none;
+
+  /* KUNCI: padding-top 12px ganti margin-top 4px
+     biar area antara tombol & item tetap bisa di-hover */
+  padding: 12px 0 6px;
+  margin: 0;
+
+  z-index: 200;
+
+  transition: opacity 0.2s ease,
+              visibility 0.2s ease,
+              transform 0.2s ease;
+}
+
+/* Muncul saat hover (desktop) atau focus-within (mobile tap) */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 18px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.dropdown-menu li a:hover {
+  background: var(--card-tint);
+  color: var(--dark-orange);
+  text-decoration: none;
+}
+
+/* =============================================================
+   5. LAYOUT UTAMA (Multi-Kolom)
+   ============================================================= */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+}
+
+.page-title {
+  color: var(--dark-orange);
+  border-bottom: 2px solid var(--jambalaya);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  color: var(--dark-orange);
+  font-size: 18px;
+  margin: 30px 0 12px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+  align-items: start;
+}
+
+/* =============================================================
+   6. HERO SECTION
+   ============================================================= */
+.hero {
+  background: linear-gradient(135deg, var(--touch-of-glamour), var(--maine-coon));
+  color: var(--text-light);
+  padding: 44px 32px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(58, 34, 16, 0.15);
+}
+
+.hero h2 {
+  font-size: 26px;
+  margin: 0 0 10px;
+}
+
+.hero p {
+  font-size: 15px;
+  margin: 0 0 20px;
+  opacity: 0.95;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--frame-bg);
+  color: var(--dark-orange);
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--jambalaya);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* =============================================================
+   7. ARTIKEL & SIDEBAR
+   ============================================================= */
+.main-article,
+.sidebar {
+  background: var(--frame-bg);
+  border-radius: 10px;
+  padding: 26px;
+  box-shadow: 0 2px 8px rgba(58, 34, 16, 0.08);
+}
+
+.main-article h2,
+.sidebar h3 {
+  color: var(--dark-orange);
+  margin-top: 0;
+  margin-bottom: 14px;
+  border-bottom: 2px solid var(--jambalaya);
+  padding-bottom: 8px;
+}
+
+.main-article h3 {
+  color: var(--maine-coon);
+  margin: 22px 0 12px;
+  font-size: 17px;
+  border-bottom: 1px dashed var(--line-soft);
+  padding-bottom: 6px;
+}
+
+.main-article p { margin-bottom: 12px; text-align: justify; }
+
+.article-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 12px 0 18px;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  padding: 10px 14px;
+  background: var(--card-tint);
+  border-left: 4px solid var(--touch-of-glamour);
+  margin-bottom: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.main-article video {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* =============================================================
+   8. KATEGORI PRODUK (grid 2 kolom di sidebar)
+   ============================================================= */
+.produk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.info-box {
+  background: var(--card-tint);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.produk-grid .info-box { margin-bottom: 0; }
+
+.info-label {
+  margin: 4px 0 2px;
+  font-weight: bold;
+  color: var(--maine-coon);
+  font-size: 13px;
+}
+
+.info-text {
+  margin: 0;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.info-thumb {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+/* =============================================================
+   9. KOTAK PETA LOKASI
+   ============================================================= */
+.lokasi-box {
+  margin-top: 8px;
+  background: var(--frame-bg);
+  border: 1px solid var(--jambalaya);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.maps-link {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  background: var(--dark-orange);
+  color: var(--text-light);
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.maps-link:hover { background: var(--maine-coon); text-decoration: none; }
+
+.lokasi-box iframe {
+  display: block;
+  width: 100%;
+  height: 320px;
+  border-radius: 6px;
+}
+
+/* =============================================================
+   13. FOOTER
+   ============================================================= */
+.site-footer {
+  background: var(--dark-orange);
+  color: var(--text-light);
+  text-align: center;
+  padding: 20px 24px;
+  font-size: 13px;
+  margin-top: 40px;
+}
+
+/* =============================================================
+   14. RESPONSIVE DESIGN
+   ============================================================= */
+
+/* ---------- TABLET & MOBILE (<= 860px) ---------- */
+@media (max-width: 860px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .gallery      { grid-template-columns: repeat(2, 1fr); }
+  .form-layout  { grid-template-columns: 1fr; }
+
+  /* Tampilkan tombol hamburger */
+  .nav-toggle-label {
+    display: block;
+    order: 3;
+  }
+
+  /* Nav tersembunyi, muncul saat checkbox dicentang */
+  .main-nav {
+    order: 4;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .nav-toggle:checked ~ .main-nav {
+    max-height: 700px;
+    margin-top: 8px;
+  }
+
+  .main-nav .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .main-nav .nav-list > li > a {
+    display: block;
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  /* Dropdown di mobile: tidak absolute, mengalir di dalam */
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+    display: none;              /* default hidden di mobile */
+    box-shadow: none;
+    margin: 4px 0 4px 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 6px;
+    padding: 6px 0;
+    min-width: auto;
+  }
+
+  /* Buka dropdown di mobile saat parent di-hover atau di-focus */
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+
+  /* Wrapper tabel tetap bisa scroll horizontal */
+  .table-wrapper .price-table,
+  .table-wrapper .info-table {
+    min-width: 460px;
+  }
+}
+
+/* ---------- MOBILE KECIL (<= 520px) ---------- */
+@media (max-width: 520px) {
+  .gallery { grid-template-columns: 1fr; }
+  .hero h2 { font-size: 20px; }
+  .hero    { padding: 32px 20px; }
+  .container { padding: 20px 16px 40px; }
+  .produk-grid { grid-template-columns: 1fr 1fr; }
+  .header-inner { padding: 12px 18px; }
+
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-text h1 {
+    font-size: 17px;
+  }
+
+  .brand-text .tagline {
+    font-size: 11px;
+  }
+
+  /* Form padding lebih kecil di layar sempit */
+  .form-section { padding: 20px; }
+  .main-article,
+  .sidebar { padding: 20px; }
+
+  /* Tabel minimal lebih kecil di HP kecil */
+  .table-wrapper .price-table,
+  .table-wrapper .info-table {
+    min-width: 400px;
+  }
+}

@@ -1,0 +1,192 @@
+<!--
+  ============================================================
+  Proyek Akhir Pemrograman Antarmuka Pengguna
+  Website Profil & Katalog UMKM — Warung Pojok Mba Sofy
+
+  Mata Kuliah : Pemrograman Antarmuka Pengguna (SI23025)
+  Kelompok    : 9 (SI A)
+
+  Disusun oleh:
+  - Deio Castello Sujati       (825250002)
+  - Felicia Rivera             (825250003)
+  - Muhammad Ubait Dhaifullah  (825250012)
+  ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warung Pojok Mba Sofy — Beranda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER (konsisten di semua halaman) ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo + Nama Brand -->
+      <div class="brand">
+        <img src="image/logo.png" alt="Logo Warung Pojok Mba Sofy" class="brand-logo">
+        <div class="brand-text">
+          <h1>Warung Pojok Mba Sofy</h1>
+          <p class="tagline">Masakan Rumahan, Rasa Istimewa</p>
+        </div>
+      </div>
+
+      <!-- Tombol hamburger (muncul di layar kecil, CSS-only) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <!-- Navigasi Utama -->
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Beranda</a></li>
+
+          <li class="dropdown">
+            <a href="menu.html" class="dropdown-toggle">Menu &#9662;</a>
+            <ul class="dropdown-menu">
+              <li><a href="menu.html#makanan">Makanan</a></li>
+              <li><a href="menu.html#minuman">Minuman</a></li>
+              <li><a href="menu.html#roti">Roti Bakar</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html">Tentang</a></li>
+          <li><a href="menu.html#form-pemesanan">Pemesanan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= KONTEN UTAMA ================= -->
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h2>Masakan Rumahan, Rasa Istimewa</h2>
+      <p>Warung Pojok Mba Sofy menyajikan aneka masakan rumahan dengan bahan segar dan harga terjangkau.</p>
+      <a href="menu.html" class="btn-primary">Lihat Menu &amp; Pesan</a>
+    </section>
+
+    <!-- Layout multi-kolom: artikel + sidebar -->
+    <div class="content-grid">
+
+      <!-- KOLOM UTAMA (2fr) -->
+      <article class="main-article">
+        <h2>Selamat Datang</h2>
+        <img src="image/fotodepan.jpeg" alt="Tampak depan Warung Pojok Mba Sofy" class="article-img">
+        <p>
+          <strong>Warung Pojok Mba Sofy</strong> adalah usaha kuliner rumahan yang melayani
+          menu masakan sehari-hari dengan cita rasa rumahan. Berdiri sebagai warung
+          pojok yang ramai dikunjungi pelanggan sekitar, kami menyediakan aneka
+          <em>nasi goreng, kwetiau/mie goreng, nasi katsu, roti bakar,</em> hingga
+          minuman dingin dan hangat.
+        </p>
+        <p>
+          Semua menu dimasak <strong>fresh setelah dipesan</strong> menggunakan bahan
+          segar setiap hari, tanpa MSG berlebih, dan resep turun-temurun dari
+          keluarga Mba Sofy.
+        </p>
+
+        <h3>Keunggulan Kami</h3>
+        <ul class="feature-list">
+          <li><strong>Menu bervariasi</strong> — mulai dari Rp 6.000 !</li>
+          <li><strong>Porsi fleksibel</strong> — tersedia Komplit &amp; Special !</li>
+          <li><strong>Dimasak fresh</strong> — pesanan dimasak langsung setelah pesanan diterima !</li>
+          <li><strong>Tempat nyaman</strong> — bersih dan ramah untuk seluruh pelnggan !</li>
+        </ul>
+
+        <h3>Jelajahi Lebih Lanjut</h3>
+        <p>
+          Ingin tahu lebih dalam tentang warung kami? Kunjungi halaman
+          <a href="about.html">Tentang Kami</a> untuk mengenal visi, misi,
+          dan cerita di balik Warung Pojok Mba Sofy.
+        </p>
+
+        <!-- VIDEO (multimedia) -->
+        <h3>Video Profil Warung</h3>
+        <video controls poster="image/nasi goreng.jpg.jpeg">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          Browser Anda tidak mendukung elemen video.
+        </video>
+      </article>
+
+      <!-- SIDEBAR (1fr) -->
+      <aside class="sidebar">
+
+        <h3>Kategori Produk</h3>
+        <div class="produk-grid">
+          <div class="info-box">
+            <img class="info-thumb" src="image/nasi goreng.jpg.jpeg" alt="Nasi Goreng">
+            <p class="info-label">Nasi Goreng</p>
+            <p class="info-text">Biasa &middot; Komplit &middot; Special</p>
+          </div>
+          <div class="info-box">
+            <img class="info-thumb" src="image/kwetiau goreng.jpg.jpeg" alt="Kwetiau Goreng">
+            <p class="info-label">Kwetiau &amp; Mie</p>
+            <p class="info-text">Biasa &middot; Komplit &middot; Special</p>
+          </div>
+          <div class="info-box">
+            <img class="info-thumb" src="image/nasi katsu.jpg.jpeg" alt="Nasi Katsu">
+            <p class="info-label">Nasi Katsu</p>
+            <p class="info-text">Original &middot; Geprek &middot; Telor</p>
+          </div>
+          <div class="info-box">
+            <img class="info-thumb" src="image/roti bakar.jpg.jpeg" alt="Roti Bakar">
+            <p class="info-label">Roti Bakar</p>
+            <p class="info-text">Aneka Rasa &middot; Mix Keju</p>
+          </div>
+          <div class="info-box">
+            <img class="info-thumb" src="image/minuman dingin.jpg.jpeg" alt="Minuman Dingin">
+            <p class="info-label">Minuman Dingin</p>
+            <p class="info-text">Nutrisari &middot; Ovaltine &middot; Pop Ice</p>
+          </div>
+          <div class="info-box">
+            <img class="info-thumb" src="image/kopi panas.jpg.jpeg" alt="Minuman Hangat">
+            <p class="info-label">Minuman Hangat</p>
+            <p class="info-text">Kopi &middot; Ovaltine Hangat</p>
+          </div>
+        </div>
+
+        <h3>Jam Operasional</h3>
+        <div class="info-box">
+          <p class="info-label">Senin – Jumat</p>
+          <p class="info-text">07.00 – 17.00 WIB</p>
+        </div>
+
+        <h3>Peta Lokasi</h3>
+        <div class="lokasi-box">
+          <a class="maps-link" href="https://maps.google.com/?q=Warung+Pojok+Mba+Sofy"
+             target="_blank" rel="noopener">Buka di Maps</a>
+          <!-- PETA / MAPS (multimedia) -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.71564722645!2d106.78846659999999!3d-6.1688182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f65c8572640d%3A0xc0a066d78372614e!2sTarumanagara%20University!5e0!3m2!1sen!2sid!4v1789272072377!5m2!1sen!2sid"
+            width="100%" height="320" style="border:0;" loading="lazy">
+          </iframe>
+        </div>
+        <br>
+        <h3>Kontak Cepat</h3>
+        <div class="info-box">
+          <p class="info-label">Telepon</p>
+          <p class="info-text">0813-8376-3005</p>
+          <p class="info-label">Email</p>
+          <p class="info-text">warung.mbasofy@gmail.com</p>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Warung Pojok Mba Sofy — Kelompok 9 (SI A). Proyek Akhir Pemrograman Antarmuka Pengguna.</p>
+  </footer>
+
+</body>
+</html>
