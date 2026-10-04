@@ -1,0 +1,196 @@
+<!--
+  ============================================================
+  Proyek Akhir Pemrograman Antarmuka Pengguna
+  Website Profil & Katalog UMKM — Warung Pojok Mba Sofy
+
+  Mata Kuliah : Pemrograman Antarmuka Pengguna (SI23025)
+  Kelompok    : 9 (SI A)
+
+  Disusun oleh:
+  - Deio Castello Sujati       (825250002)
+  - Felicia Rivera             (825250003)
+  - Muhammad Ubait Dhaifullah  (825250012)
+  ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warung Pojok Mba Sofy — Tentang Kami</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER (konsisten) ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <div class="brand">
+        <img src="image/logo.png" alt="Logo Warung Pojok Mba Sofy" class="brand-logo">
+        <div class="brand-text">
+          <h1>Warung Pojok Mba Sofy</h1>
+          <p class="tagline">Tentang Kami</p>
+        </div>
+      </div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Beranda</a></li>
+
+          <li class="dropdown">
+            <a href="menu.html" class="dropdown-toggle">Menu &#9662;</a>
+            <ul class="dropdown-menu">
+              <li><a href="menu.html#makanan">Makanan</a></li>
+              <li><a href="menu.html#minuman">Minuman</a></li>
+              <li><a href="menu.html#roti">Roti Bakar</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html" class="active">Tentang</a></li>
+          <li><a href="menu.html#form-pemesanan">Pemesanan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= KONTEN UTAMA ================= -->
+  <main class="container">
+
+    <h2 class="page-title">Tentang Warung Pojok Mba Sofy</h2>
+
+    <!-- Layout multi-kolom: artikel + sidebar -->
+    <div class="content-grid">
+
+      <!-- KOLOM UTAMA -->
+      <article class="main-article">
+
+        <h2>Cerita Kami</h2>
+        <img src="image/fotodepan.jpeg" alt="Tampak depan Warung Pojok Mba Sofy" class="article-img">
+        <p>
+          <strong>Warung Pojok Mba Sofy</strong> berawal dari dapur rumah Mba Sofy
+          pada tahun 2018. Berawal dari kecintaan pada masakan rumahan dan
+          keinginan untuk berbagi rasa, Mba Sofy mulai membuka warung kecil
+          di pojok jalan yang kini menjadi tempat favorit warga sekitar.
+        </p>
+        <p>
+          Nama "Pojok" sendiri diambil karena lokasi warung yang berada di
+          sudut jalan, namun justru dari pojok itulah kami melayani ratusan
+          pelanggan setiap harinya dengan penuh kehangatan.
+        </p>
+
+        <h3>Visi</h3>
+        <p>
+          Menjadi warung makan rumahan yang <strong>terpercaya, terjangkau,
+          dan konsisten</strong> dalam menyajikan cita rasa masakan Indonesia
+          yang sehat.
+        </p>
+
+        <h3>Misi</h3>
+        <ul class="feature-list">
+          <li>Menyajikan masakan dengan bahan segar dan berkualitas</li>
+          <li>Memberikan porsi yang memuaskan dengan harga terjangkau</li>
+          <li>Menjaga kebersihan dan kenyamanan tempat makan</li>
+          <li>Melayani pelanggan dengan ramah dan cepat</li>
+          <li>Terus berinovasi pada menu tanpa meninggalkan cita rasa asli</li>
+        </ul>
+
+        <h3>Nilai yang Kami Pegang</h3>
+        <div class="table-wrapper">
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>Nilai</th>
+                <th>Penerapan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Kejujuran</strong></td>
+                <td>Bahan yang digunakan selalu sesuai standar, tanpa pengurangan kualitas.</td>
+              </tr>
+              <tr>
+                <td><strong>Kebersihan</strong></td>
+                <td>Dapur dan area makan dibersihkan setiap hari, sebelum dan sesudah buka.</td>
+              </tr>
+              <tr>
+                <td><strong>Keramahan</strong></td>
+                <td>Setiap pelanggan disambut dengan senyum dan pelayanan yang ramah.</td>
+              </tr>
+              <tr>
+                <td><strong>Konsistensi</strong></td>
+                <td>Rasa setiap menu dijaga agar tetap sama setiap harinya.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <h3>Info Singkat</h3>
+        <div class="info-box">
+          <p class="info-label">Berdiri Sejak</p>
+          <p class="info-text">2018</p>
+        </div>
+        <div class="info-box">
+          <p class="info-label">Lokasi</p>
+          <p class="info-text">Jakarta Barat, DKI Jakarta</p>
+        </div>
+        <div class="info-box">
+          <p class="info-label">Jenis Usaha</p>
+          <p class="info-text">Warung Makan Rumahan</p>
+        </div>
+        <div class="info-box">
+          <p class="info-label">Jam Buka</p>
+          <p class="info-text">Senin – Jumat<br>07.00 – 17.00 WIB</p>
+        </div>
+        <div class="info-box">
+          <p class="info-label">Jumlah Menu</p>
+          <p class="info-text">25 varian menu dari makanan hingga minuman</p>
+        </div>
+        <div class="info-box">
+          <p class="info-label">Layanan</p>
+          <p class="info-text">Dine-in &amp; Take away </p>
+        </div>
+
+        <br>
+        <h3>Peta Lokasi</h3>
+        <div class="lokasi-box">
+          <a class="maps-link" href="https://maps.google.com/?q=Warung+Pojok+Mba+Sofy"
+             target="_blank" rel="noopener">Buka di Maps</a>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.71564722645!2d106.78846659999999!3d-6.1688182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f65c8572640d%3A0xc0a066d78372614e!2sTarumanagara%20University!5e0!3m2!1sen!2sid!4v1789272072377!5m2!1sen!2sid"
+            width="100%" height="320" style="border:0;" loading="lazy">
+          </iframe>
+        </div>
+
+        <br>
+        <h3>Hubungi Kami</h3>
+        <div class="info-box">
+          <p class="info-label">Telepon</p>
+          <p class="info-text">0813-8376-3005</p>
+          <p class="info-label">Email</p>
+          <p class="info-text">warung.mbasofy@gmail.com</p>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Warung Pojok Mba Sofy — Kelompok 9 (SI A). Proyek Akhir Pemrograman Antarmuka Pengguna.</p>
+  </footer>
+
+</body>
+</html>
