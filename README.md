@@ -7,6 +7,8 @@ Proyek akhir perancangan website profil dan katalog UMKM, dikerjakan sebagai tug
 - Mata Kuliah: Pemrograman Antarmuka Pengguna
 - Kelompok: 9 (SI A)
 - Studi Kasus: Opsi A - Profil & Katalog UMKM
+- Link PPT dan Laporan: https://drive.google.com/drive/folders/1u7DrrEh4pd2Fb-DhYHQd8wr3Fknqyzms?usp=sharing
+- Link Repo Github : https://github.com/FeliciaRivera/Kelompok_9_ProyekAkhir
 
 ## Anggota Kelompok
 
