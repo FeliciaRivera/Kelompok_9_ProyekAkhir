@@ -59,4 +59,4 @@ Website ini dibuat untuk Warung Pojok Mba Sofy, sebuah usaha kuliner rumahan yan
 |---|---|
 | Deio Castello Sujati | Fondasi CSS variabel warna, reset, header, navigasi, dropdown, layout, hero, artikel, sidebar, kategori produk, peta, footer, media queries dan halaman Beranda `index.html`. |
 | Felicia Rivera | Halaman Menu `menu.html` yang mencakup tabel Katalog Menu & Daftar Harga dengan `colspan`/`rowspan`, galeri produk, form pemesanan lengkap, panel info pendukung, serta styling CSS untuk tabel, galeri, dan form. |
-| Muhammad Ubait Dhaifullah | Halaman Tentang Kami `about.html` yang mencakup cerita usaha, visi, misi, tabel nilai perusahaan, sidebar info singkat, dan peta lokasi. Bertanggung jawab atas dokumentasi `README.md` dan Quality Control seluruh file. |
+| Muhammad Ubait Dhaifullah | Halaman Tentang Kami `about.html` yang mencakup cerita usaha, visi, misi, tabel nilai perusahaan, sidebar info singkat, dan peta lokasi. Bertanggung jawab atas dokumentasi `README.md`. |
